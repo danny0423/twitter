@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit",
+    "docker:dev": "docker compose up",
+    "docker:build": "docker compose up --build",
+    "docker:down": "docker compose down"
   },
   "dependencies": {
     "next": "16.2.0",
