@@ -1,0 +1,21 @@
+@use '@/styles/abstracts' as *;
+
+.btn--primary {
+  @include btn-base;
+  border: none;
+  color: $color-text-dark;
+  background: $color-white;
+  img { height: $icon-size-sm; }
+  &:hover  { background: #e6e6e6; }
+  &:active { background: #cccccc; }
+}
+
+.btn--outline {
+  @include btn-base;
+  border: 2px solid $color-border;
+  color: $color-text;
+  background: transparent;
+  img { height: $icon-size-sm; filter: invert(1); }
+  &:hover  { background: rgba($color-white, 0.08); }
+  &:active { background: rgba($color-white, 0.15); }
+}

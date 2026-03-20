@@ -12,6 +12,7 @@
 
 html {
   height: 100%;
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 html,
@@ -26,7 +27,7 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

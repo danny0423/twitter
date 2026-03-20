@@ -1,0 +1,102 @@
+@use '@/styles/abstracts' as *;
+
+
+.page{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+//  Left Side
+
+.brand{
+  flex: 5.8;
+  @include flex-center;
+}
+
+.logo{
+  height: 300px;
+}
+
+//  Right Side
+
+.main{
+  flex: 4.3;
+  @include flex-column;
+  justify-content: center;
+  padding: $spacing-lg;
+  gap: 7rem;
+}
+
+.headline{
+  color: $color-text;
+}
+
+.headline{
+  font-size: $font-size-3xl;
+}
+
+.panel{
+  @include flex-column;
+  gap:$spacing-md;
+  max-width: 30rem;
+}
+
+.panelTitle--join{
+  font-size: $font-size-xl;
+}
+
+.panelActions{
+  display: inline-block;
+  @include flex-column;
+  text-align: center;
+  gap:$spacing-md;
+}
+
+.divider{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    background: $color-border;
+  }
+}
+
+.btn--primary {
+  @include btn-base;
+  border: none;
+  color: $color-text-dark;
+  background: $color-white;
+  img { height: $icon-size-sm; }
+  &:hover  { background: #e6e6e6; }
+  &:active { background: #cccccc; }
+}
+
+.btn--outline {
+  @include btn-base;
+  border: 2px solid $color-border;
+  color: $color-text;
+  background: transparent;
+  img { height: $icon-size-sm; filter: invert(1); }
+  &:hover  { background: rgba($color-white, 0.08); }
+  &:active { background: rgba($color-white, 0.15); }
+}
+
+// ── Terms ────────────────────────────────
+.terms {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  line-height: 1.5;
+
+  a {
+    color: $color-blue;
+    &:hover { text-decoration: underline; }
+  }
+}
+

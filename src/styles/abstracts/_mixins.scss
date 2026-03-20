@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+@mixin layout--test($color: red) {
+  height: 100%;
+  width: 100%;
+  background-color: $color;
+}
+
+@mixin flex-center($flex-type: flex) {
+  display: if($flex-type == inline, inline-flex, $flex-type);
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin btn-base {
+  @include flex-center;
+  width: 100%;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+  font-size: $font-size-base;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  img { height: $icon-size-sm; }
+}
