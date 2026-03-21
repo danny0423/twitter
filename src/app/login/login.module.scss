@@ -25,14 +25,11 @@
   @include flex-column;
   justify-content: center;
   padding: $spacing-lg;
-  gap: 7rem;
+  gap: $spacing-2xl;
 }
 
 .headline{
   color: $color-text;
-}
-
-.headline{
   font-size: $font-size-3xl;
 }
 
@@ -42,12 +39,15 @@
   max-width: 30rem;
 }
 
-.panelTitle--join{
+.panelTitle--join {
   font-size: $font-size-xl;
 }
 
+.panelTitle--signin {
+  font-size: $font-size-lg;
+}
+
 .panelActions{
-  display: inline-block;
   @include flex-column;
   text-align: center;
   gap:$spacing-md;
@@ -66,26 +66,6 @@
     height: 1px;
     background: $color-border;
   }
-}
-
-.btn--primary {
-  @include btn-base;
-  border: none;
-  color: $color-text-dark;
-  background: $color-white;
-  img { height: $icon-size-sm; }
-  &:hover  { background: #e6e6e6; }
-  &:active { background: #cccccc; }
-}
-
-.btn--outline {
-  @include btn-base;
-  border: 2px solid $color-border;
-  color: $color-text;
-  background: transparent;
-  img { height: $icon-size-sm; filter: invert(1); }
-  &:hover  { background: rgba($color-white, 0.08); }
-  &:active { background: rgba($color-white, 0.15); }
 }
 
 // ── Terms ────────────────────────────────

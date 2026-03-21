@@ -7,7 +7,11 @@
 }
 
 @mixin flex-center($flex-type: flex) {
-  display: if($flex-type == inline, inline-flex, $flex-type);
+  @if $flex-type == inline {
+    display: inline-flex;
+  } @else {
+    display: $flex-type;
+  }
   justify-content: center;
   align-items: center;
 }

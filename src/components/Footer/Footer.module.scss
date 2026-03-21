@@ -17,6 +17,13 @@
   font-size: $font-size-xs;
   color: $color-text-muted;
   cursor: pointer;
+  padding-right: $spacing-md;
+  border-right: 1px solid $color-text-muted;
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
 
   &:hover {
     text-decoration: underline;
