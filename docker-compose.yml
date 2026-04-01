@@ -5,6 +5,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
+      - /app/src/generated/prisma 
     environment:
       - NODE_ENV=development
       - WATCHPACK_POLLING=true
