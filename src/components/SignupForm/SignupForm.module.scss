@@ -42,45 +42,7 @@
   gap: $spacing-md;
 }
 
-.field {
-  position: relative;
-  display: block;
-}
 
-.input {
-  width: 100%;
-  background: transparent;
-  border: 1px solid $color-border;
-  border-radius: $spacing-xs;
-  padding: $spacing-lg $spacing-md $spacing-sm;
-  color: $color-text;
-  font-size: $font-size-base;
-  outline: none;
-  box-sizing: border-box;
-
-  &:focus {
-    border-color: $color-blue;
-  }
-
-  // when input has value or focused, float the label
-  &:focus ~ .label,
-  &:not(:placeholder-shown) ~ .label {
-    top: $spacing-sm;
-    font-size: $font-size-xs;
-    color: $color-blue;
-  }
-}
-
-.label {
-  position: absolute;
-  left: $spacing-md;
-  top: 50%;
-  transform: translateY(-50%);
-  color: $color-text-muted;
-  font-size: $font-size-base;
-  pointer-events: none;
-  transition: top 0.15s, font-size 0.15s, color 0.15s;
-}
 
 // ── Birthday ────────────────────────────────
 .birthday {

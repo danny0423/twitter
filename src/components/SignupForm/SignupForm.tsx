@@ -1,24 +1,25 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import styles from "./SignupForm.module.scss";
-import { useState } from "react";
+import React from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import styles from './SignupForm.module.scss';
+import { useState } from 'react';
+import Input from '../Input/Input';
 
 const MONTHS = [
-  "一月",
-  "二月",
-  "三月",
-  "四月",
-  "五月",
-  "六月",
-  "七月",
-  "八月",
-  "九月",
-  "十月",
-  "十一月",
-  "十二月",
+  '一月',
+  '二月',
+  '三月',
+  '四月',
+  '五月',
+  '六月',
+  '七月',
+  '八月',
+  '九月',
+  '十月',
+  '十一月',
+  '十二月',
 ];
 const DAYS = Array.from({ length: 31 }, (_, i) => i + 1);
 const YEARS = Array.from(
@@ -29,19 +30,19 @@ const YEARS = Array.from(
 export default function SignupForm() {
   const router = useRouter();
 
-  const [name, setName] = useState<string>("");
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [name, setName] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const res = await fetch("/api/register", {
-      method: "POST",
+    const res = await fetch('/api/register', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ name, username, email, password }),
     });
@@ -53,7 +54,7 @@ export default function SignupForm() {
     }
 
     // 註冊成功 → 導向登入或直接登入
-    router.push("/login");
+    router.push('/login');
   };
 
   return (
@@ -62,7 +63,7 @@ export default function SignupForm() {
         <button
           className={styles.closeBtn}
           onClick={() =>
-            window.history.length > 1 ? router.back() : router.push("/login")
+            window.history.length > 1 ? router.back() : router.push('/login')
           }
           aria-label="關閉"
         >
@@ -75,45 +76,40 @@ export default function SignupForm() {
       <h1 className={styles.title}>建立你的帳戶</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.fields}>
-          <label className={styles.field}>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder=" "
-              onChange={(e) => setName(e.target.value)}
-            />
-            <span className={styles.label}>姓名</span>
-          </label>
+          <Input
+            type="text"
+            placeholder=" "
+            onChange={(e) => setName(e.target.value)}
+            label="姓名"
+          />
 
-          <label className={styles.field}>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder=" "
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <span className={styles.label}>使用者名稱</span>
-          </label>
+          <Input
+            type="text"
+            placeholder=" "
+            onChange={(e) => setUsername(e.target.value)}
+            label="使用者名稱"
+          />
 
-          <label className={styles.field}>
-            <input
-              className={styles.input}
-              type="email"
-              placeholder=" "
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <span className={styles.label}>電子郵件</span>
-          </label>
+          <Input
+            type="text"
+            placeholder=" "
+            onChange={(e) => setUsername(e.target.value)}
+            label="使用者名稱"
+          />
 
-          <label className={styles.field}>
-            <input
-              className={styles.input}
-              type="password"
-              placeholder=" "
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <span className={styles.label}>密碼</span>
-          </label>
+          <Input
+            type="email"
+            placeholder=" "
+            onChange={(e) => setEmail(e.target.value)}
+            label="電子郵件"
+          />
+
+          <Input
+            type="password"
+            placeholder=" "
+            onChange={(e) => setPassword(e.target.value)}
+            label="密碼"
+          />
         </div>
 
         <div className={styles.birthday}>
