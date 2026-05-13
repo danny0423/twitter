@@ -68,6 +68,19 @@
   }
 }
 
+// ── Create Account Link ──────────────────
+.createAccountBtn {
+  @include btn-base;
+  border: none;
+  color: $color-text-dark;
+  background: $color-white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  &:hover  { background: #e6e6e6; }
+  &:active { background: #cccccc; }
+}
+
 // ── Terms ────────────────────────────────
 .terms {
   font-size: $font-size-xs;

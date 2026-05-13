@@ -12,11 +12,11 @@ export default auth((req) => {
   const isLoggedIn = !!req.auth;
   const { pathname } = req.nextUrl;
 
-  const publicPaths = ['/login', '/auth/signup'];
+  const publicPaths = ['/', '/auth/signup','/auth/login'];
   const isPublicPath = publicPaths.includes(pathname);
 
   if (!isLoggedIn && !isPublicPath) {
-    return NextResponse.redirect(new URL('/login', req.url));
+    return NextResponse.redirect(new URL('/', req.url));
   }
 });
 

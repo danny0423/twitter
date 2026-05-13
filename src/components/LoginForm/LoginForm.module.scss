@@ -1,0 +1,38 @@
+@use '@/styles/abstracts' as *;
+
+.form {
+  @include flex-column;
+  gap: $spacing-lg;
+  padding: $spacing-md 0;
+}
+
+// ── Header ──────────────────────────────────
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ── Fields ──────────────────────────────────
+.fields {
+  @include flex-column;
+  gap: $spacing-md;
+}
+
+// ── Next Button ─────────────────────────────
+.nextBtn {
+  width: 100%;
+  padding: $spacing-md;
+  border-radius: $radius-full;
+  border: none;
+  background: $color-text;
+  color: $color-text-dark;
+  font-size: $font-size-base;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: $spacing-2xl;
+
+  &:hover {
+    background: darken(#e7e9ea, 10%);
+  }
+}
