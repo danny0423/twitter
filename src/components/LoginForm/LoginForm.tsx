@@ -5,15 +5,14 @@ import React, { useState } from "react";
 import styles from "./LoginForm.module.scss";
 import Image from "next/image";
 import Input from "../Input/Input";
+import SocialButtons from "../SocialButtons/SocialButtons";
+import Button from "../Button/Button";
 
 const LoginForm = () => {
   const router = useRouter();
 
-  const [name, setName] = useState<string>("");
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const [identifier, setIdentifier] = useState<string>("");
+
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>)=>{
     e.preventDefault()
@@ -34,47 +33,24 @@ const LoginForm = () => {
         <Image src="/icons/x-logo.svg" alt="X" width={28} height={28} />
         <div />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div className={styles.fields}>
+          <SocialButtons variant={'outline'}/>
+          <div className={styles.divider}>OR</div>
           <Input
             type="text"
             placeholder=" "
-            onChange={(e) => setName(e.target.value)}
-            label="姓名"
-          />
-
-          <Input
-            type="text"
-            placeholder=" "
-            onChange={(e) => setUsername(e.target.value)}
-            label="使用者名稱"
-          />
-
-          <Input
-            type="text"
-            placeholder=" "
-            onChange={(e) => setUsername(e.target.value)}
-            label="使用者名稱"
-          />
-
-          <Input
-            type="email"
-            placeholder=" "
-            onChange={(e) => setEmail(e.target.value)}
-            label="電子郵件"
-          />
-
-          <Input
-            type="password"
-            placeholder=" "
-            onChange={(e) => setPassword(e.target.value)}
-            label="密碼"
+            onChange={(e) => setIdentifier(e.target.value)}
+            label="Phone, email, or username"
           />
         </div>
+        <Button  type="submit">
+          Next
+        </Button>
 
-        <button className={styles.nextBtn} type="submit">
-          下一步
-        </button>
+        <Button  type="submit">
+          Forgot password?
+        </Button>
       </form>
     </div>
   );

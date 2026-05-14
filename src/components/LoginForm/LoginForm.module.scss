@@ -3,7 +3,12 @@
 .form {
   @include flex-column;
   gap: $spacing-lg;
-  padding: $spacing-md 0;
+  padding: $spacing-lg 0;
+  & > form{
+    padding: 0px 8rem;
+    @include flex-column;
+    gap: $spacing-lg;
+  }
 }
 
 // ── Header ──────────────────────────────────
@@ -19,20 +24,18 @@
   gap: $spacing-md;
 }
 
-// ── Next Button ─────────────────────────────
-.nextBtn {
-  width: 100%;
-  padding: $spacing-md;
-  border-radius: $radius-full;
-  border: none;
-  background: $color-text;
-  color: $color-text-dark;
-  font-size: $font-size-base;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: $spacing-2xl;
 
-  &:hover {
-    background: darken(#e7e9ea, 10%);
+.divider{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    background: $color-border;
   }
 }
